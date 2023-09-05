@@ -1,0 +1,88 @@
+<html>
+
+<head>
+	<title>Explorador de Tapas</title>
+	<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css" />
+	<script src="js/bars.js"></script>
+	<!-- GOOGLE API LICENSE; borrowed key from S Manzanera -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEB1plSzdQgv2oSvyvPT99BHmhJpG8Cys&v=3.exp"></script>
+	<script>
+		var map;
+		function initialize() {
+			var bar1 = bares[10];
+			var mapOptions = {
+				minZoom: 16,
+				backgroundColor: "#ff00ff",
+				zoom: 18,
+				center: new google.maps.LatLng(bar1.latitude, bar1.longitude),
+				fullscreenControl: false,
+				title: "Bodegueta Valeriola"
+			};
+			map = new google.maps.Map(document.getElementById('map-canvas-detail'),
+				mapOptions);
+
+			var point = new google.maps.LatLng(bar1.latitude, bar1.longitude);
+			var pOptions = {
+				position: point,
+				map: map,
+				title: bar1.name
+			};
+			var marker = new google.maps.Marker(pOptions);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<img src="https://img.icons8.com/color/48/000000/tapas.png" />
+		<img src="https://img.icons8.com/material/48/000000/tapas.png" />
+		<img src="https://img.icons8.com/dusk/48/000000/tapas.png" />
+		<h2 class="title">Explorador de Tapas</h2>
+	</div>
+	<div class="menu">
+		<ul class="menu-items">
+			<li class="menu-item"><a href="index.html" class="menu-item-text">Inicio</a></li>
+			<li class="menu-item"><a href="mapa.html" class="menu-item-text">Bares que tengo cerca</a></li>
+		</ul>
+	</div>
+	<div class="wrapper">
+		<h1>Bodegueta Valeriola</h1>
+		<p>Este pequeño local fue en su tiempo parte de una <strong>destilería de licores</strong> Lorem ipsum dolor sit
+			amet,
+			consectetur adipiscing elit. Nunc sollicitudin vehicula odio ac sagittis. Aenean sem tortor, vestibulum et
+			malesuada vitae, facilisis eget massa. Aliquam sed sapien quis erat posuere pharetra non at elit. Proin id
+			magna pharetra, mollis odio in, mollis mi. Sed sit amet lectus sapien. Mauris hendrerit consectetur felis,
+			in finibus nulla molestie in. Vivamus odio neque, consectetur vel lorem vel, pretium hendrerit diam.
+		</p>
+		<div class="product-item">
+			<p class="product-item-img-container"><img class="product-item-img" src="img/bar_1.jpg" /></p>
+			<h2>Local original</h2>
+			<p class="product-item-text">El espléndido aspecto actual del establecimiento, antigua venta de vinos.</p>
+		</div>
+
+		<div class="product-item">
+			<p class="product-item-img-container"><img class="product-item-img" src="img/tapa_rinones.jpg" />
+			</p>
+			<h2>Tapa estrella: Riñones al coñac</h2>
+			<p class="product-item-text">Plato recio e intenso.</p>
+		</div>
+		<hr />
+		<div class="product-item-contact">
+			<h2>Ubicación y reservas</h2>
+			<p>Carrer Pérez Escrich, 13</p>
+			<p>Tel.: 96 363 25 39</p>
+		</div>
+		
+
+		<div id="map-canvas-detail"></div>
+	</div>
+
+</body>
+
+</html>
