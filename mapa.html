@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tapas' Quest</title>
+        <title>Your Tapas Quest</title>
         <meta charset='utf-8' />
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 
@@ -9,10 +9,10 @@
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
-        <!-- Google styles 
+        <!-- Google styles -->
 		<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">  -->
+        <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">  
         
         <link rel="stylesheet" href="css/styles.css" />
         
@@ -20,14 +20,14 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEB1plSzdQgv2oSvyvPT99BHmhJpG8Cys&v=3.exp"></script>  
         -->
         
-        <!-- MAP functionalities file 
-        <script src="js/mpbx-barmap.js"></script> -->
+        <!-- MAP functionalities file -->
+        <script src="js/mpbx-barmap.js"></script> 
 
         <!-- DATA FILE (JS object containing the array with the bars' data) --> 
         <script src="js/bars.js"></script>
     </head>
     
-    <body>
+    <body onload="init()">
 
         <div class="header">
             <img src="https://img.icons8.com/color/48/000000/tapas.png" />
@@ -43,26 +43,16 @@
 			</ul>
         </div>
 
-        <!-- MAP start -->
+        
         <div class="wrapper">
             <h1>Bares que tienes cerca</h1>
             
             <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
-            
+            <!-- MAP start -->
             <div id="map-canvas"></div>
-            <script>
-                mapboxgl.accessToken = 'pk.eyJ1IjoianVhbnJ1Z2FyIiwiYSI6ImNranlpd2lqbzB5djQydW1sZTRvem9tdmgifQ.zvNvGIYji6wVpwjlnTHeJg';
-
-                const map = new mapboxgl.Map({
-                container: 'map-canvas', // container ID
-                style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                center: [-0.37918, 39.4741], // starting position [lng, lat] = Valencia
-                zoom: 14, // starting zoom
-                });
-
-            </script>
+            <!-- MAP end -->
         </div>
-               <!-- MAP end -->
+              
 
     </body>
 </html>
